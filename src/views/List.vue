@@ -1,52 +1,50 @@
 <template>
-  <div class="container">
-    <b-container fluid>
-      <!-- User Interface controls -->
-      <b-row>
-        <b-col lg="12" class="my-1">
-          <b-col sm="6" class="my-1">
-            <b-form-group
-              label="Filter"
-              label-for="filter-input"
-              label-cols-sm="3"
-              label-align-sm="right"
-              label-size="sm"
-              class="mb-0"
-            >
-              <b-input-group size="sm">
-                <b-form-input
-                  id="filter-input"
-                  v-model="filter"
-                  type="search"
-                  placeholder="Type to Search"
-                ></b-form-input>
-              </b-input-group>
-            </b-form-group>
-          </b-col>
-
-          <b-col sm="6" class="my-1">
-            <b-pagination
-              v-model="currentPage"
-              :total-rows="totalRows"
-              :per-page="perPage"
-              align="fill"
-              size="sm"
-              class="my-0"
-            ></b-pagination>
-          </b-col>
+  <b-container fluid>
+    <!-- User Interface controls -->
+    <b-row>
+      <b-col lg="12" class="my-1">
+        <b-col sm="6" class="my-1">
+          <b-form-group
+            label="Filter"
+            label-for="filter-input"
+            label-cols-sm="3"
+            label-align-sm="right"
+            label-size="sm"
+            class="mb-0"
+          >
+            <b-input-group size="sm">
+              <b-form-input
+                id="filter-input"
+                v-model="filter"
+                type="search"
+                placeholder="Type to Search"
+              ></b-form-input>
+            </b-input-group>
+          </b-form-group>
         </b-col>
-      </b-row>
-      <b-table
-        striped
-        hover
-        :items="posts"
-        :fields="fields"
-        :current-page="currentPage"
-        :per-page="perPage"
-        :filter="filter"
-      ></b-table>
-    </b-container>
-  </div>
+
+        <b-col sm="6" class="my-1">
+          <b-pagination
+            v-model="currentPage"
+            :total-rows="totalRows"
+            :per-page="perPage"
+            align="fill"
+            size="sm"
+            class="my-0"
+          ></b-pagination>
+        </b-col>
+      </b-col>
+    </b-row>
+    <b-table
+      striped
+      hover
+      :items="posts"
+      :fields="fields"
+      :current-page="currentPage"
+      :per-page="perPage"
+      :filter="filter"
+    ></b-table>
+  </b-container>
 </template>
 
 <script>
@@ -70,7 +68,7 @@ export default {
       userId: 1,
       totalRows: 1,
       currentPage: 1,
-      perPage: 5,
+      perPage: 15,
       pageOptions: [5],
       filter: null,
       filterOn: [],

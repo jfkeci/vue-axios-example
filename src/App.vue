@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <Header />
+    <!-- <Header /> -->
     <router-view></router-view>
-    <h1>Posts</h1>
     <!-- <input
       type="text"
       v-model="postTitle"
@@ -22,7 +21,7 @@
 
 <script>
 import List from "./views/List";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 
 // import Create from "./views/Create";
 // import Edit from "./vieews/Edit";
@@ -31,7 +30,7 @@ export default {
   name: "App",
   components: {
     List,
-    Header,
+    // Header,
   },
 };
 </script>
