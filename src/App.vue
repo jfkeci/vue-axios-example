@@ -1,20 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <router-view></router-view>
+    <h1>Posts</h1>
+    <!-- <input
+      type="text"
+      v-model="postTitle"
+      @keyup.enter="addPost"
+      placeholder="Title"
+    />
+    <br />
+    <input
+      type="text"
+      v-model="postBody"
+      @keyup.enter="addPost"
+      placeholder="Body"
+    /> -->
+    <List />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import List from "./views/List";
+import Header from "./components/Header";
+
+// import Create from "./views/Create";
+// import Edit from "./vieews/Edit";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    List,
+    Header,
+  },
+};
 </script>
+
 
 <style>
 #app {
@@ -24,5 +45,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 </style>
